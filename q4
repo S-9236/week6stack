@@ -1,0 +1,28 @@
+// 4. Program to check stack overflow and underflow conditions
+#include <stdio.h>
+#define MAX 3
+int stack[MAX], top = -1;
+void push(int x) {
+    if (top == MAX - 1)
+        printf("Overflow: Stack is full\n");
+    else
+        stack[++top] = x;
+}
+void pop() {
+    if (top == -1)
+        printf("Underflow: Stack is empty\n");
+    else
+        top--;
+}
+int main() {
+    pop();
+    push(10);
+    push(20);
+    push(30);
+    push(40);
+    pop();
+    pop();
+    pop();
+    pop();
+    return 0;
+}
